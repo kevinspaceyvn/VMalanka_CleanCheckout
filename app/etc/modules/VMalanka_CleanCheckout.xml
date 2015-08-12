@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @category    VMalanka_
+ * @package     VMalanka_CleanCheckout
+ * @author      Vasyl Malanka <vasyl.malanka@yahoo.com>
+ */
+-->
+<config>
+    <modules>
+        <VMalanka_CleanCheckout>
+            <active>true</active>
+            <codePool>community</codePool>
+        </VMalanka_CleanCheckout>
+    </modules>
+</config>

@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @category    design
+ * @package     base_default
+ * @author      Vasyl Malanka <vasyl.malanka@yahoo.com>
+ */
+-->
+<layout version="1.0.0">
+    <checkout_onepage_cleancheckout>
+        <update handle="checkout_onepage_index"/>
+
+        <reference name="head">
+            <action method="addJs"><file>varien/accordion.js</file></action>
+            <action method="addItem"><type>skin_js</type><name>js/opcheckout.js</name></action>
+            <action method="addItem"><type>skin_js</type><name>js/cleancheckout.js</name></action>
+        </reference>
+
+        <reference name="root">
+            <action method="unsetChild">
+                <name>content</name>
+            </action>
+            <block type="checkout/onepage_review_info" name="content" as="content"
+                   template="cleancheckout/checkout/onepage/review/info.phtml">
+                <action method="addItemRender">
+                    <type>default</type>
+                    <block>checkout/cart_item_renderer</block>
+                    <template>checkout/onepage/review/item.phtml</template>
+                </action>
+                <action method="addItemRender">
+                    <type>grouped</type>
+                    <block>checkout/cart_item_renderer_grouped</block>
+                    <template>checkout/onepage/review/item.phtml</template>
+                </action>
+                <action method="addItemRender">
+                    <type>configurable</type>
+                    <block>checkout/cart_item_renderer_configurable</block>
+                    <template>checkout/onepage/review/item.phtml</template>
+                </action>
+                <block type="checkout/cart_totals" name="checkout.onepage.review.info.totals" as="totals"
+                       template="checkout/onepage/review/totals.phtml"/>
+                <block type="core/text_list" name="checkout.onepage.review.info.items.before" as="items_before"
+                       translate="label">
+                    <label>Items Before</label>
+                </block>
+                <block type="core/text_list" name="checkout.onepage.review.info.items.after" as="items_after"
+                       translate="label">
+                    <label>Items After</label>
+                </block>
+                <block type="checkout/agreements" name="checkout.onepage.agreements" as="agreements"
+                       template="checkout/onepage/agreements.phtml"/>
+                <block type="core/template" name="checkout.onepage.review.button" as="button"
+                       template="checkout/onepage/review/button.phtml"/>
+            </block>
+        </reference>
+    </checkout_onepage_cleancheckout>
+</layout>

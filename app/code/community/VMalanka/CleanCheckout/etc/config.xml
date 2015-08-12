@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @category    VMalanka_
+ * @package     VMalanka_CleanCheckout
+ * @author      Vasyl Malanka <vasyl.malanka@yahoo.com>
+ */
+-->
+<config>
+    <modules>
+        <VMalanka_CleanCheckout>
+            <version>1.0.0</version>
+        </VMalanka_CleanCheckout>
+    </modules>
+    <global>
+        <resources>
+            <cleancheckout_setup>
+                <setup>
+                    <module>VMalanka_CleanCheckout</module>
+                </setup>
+            </cleancheckout_setup>
+        </resources>
+    </global>
+    <frontend>
+        <layout>
+            <updates>
+                <cleancheckout>
+                    <file>cleancheckout.xml</file>
+                </cleancheckout>
+            </updates>
+        </layout>
+        <routers>
+            <checkout>
+                <args>
+                    <modules>
+                        <vmalanka_cleancheckout before="Mage_Checkout">VMalanka_CleanCheckout</vmalanka_cleancheckout>
+                    </modules>
+                </args>
+            </checkout>
+        </routers>
+    </frontend>
+</config>
