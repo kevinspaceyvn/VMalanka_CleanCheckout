@@ -1,9 +1,11 @@
 # Description
 Clean Checkout module with only one Review step for Magento 1.x
 
+Version 1.0.0 works only for customers that are logged in
+
 ## Quick Start Guide
 
-Install module via Magento Connect or just copy files into your Magento project
+Copy files into your Magento project
 
 **Magento Support:**
 
